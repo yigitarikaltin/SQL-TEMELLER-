@@ -1,2 +1,2 @@
 # SQL-TEMELLER-
-i learned how to use create table and drop table.
+i learned how to use create table, drop table, add and alter table.
