@@ -5,3 +5,7 @@ CREATE TABLE Ogrenci (
 	TCKimlikNo char(11) NOT NULL,
 	KayitTarihi date NOT NULL,
 	ErkekMi bit NOT NULL)
+
+
+ALTER TABLE Ogrenci ADD DogumTarihi date 
+ALTER TABLE Ogrenci ALTER COLUMN DogumTarihi date NOT NULL
