@@ -26,3 +26,28 @@ SELECT * FROM Ogrenci WHERE OgrenciNo in (124, 11, 893) AND ErkekMi = 1
 --LIKE OPERATORU ve % KULLANIMI           "%, İÇİNDE ARAR. BAŞINA VE SONUNA EKLERSEN YERİ FARKETMEKSİZİN BULUNANLARI GÖSTERİR. SADECE SONUNA EKLERSEN BAŞINDA BULUNANLARI GÖSTERİR."
 SELECT * FROM Ogrenci WHERE Ad like 'K%'
 SELECT * FROM Ogrenci WHERE TCKimlikNo like '%34%'
+
+--PERSONEL PROJECT 
+USE OgrenciBilgileriVT
+GO 
+
+CREATE TABLE Ogretmen(
+OgretmenNo int NOT NULL,
+Ad varchar(30) NOT NULL,
+Soyad varchar(30) NOT NULL,
+TCKimlikNo char(11) NOT NULL,
+KayitTarihi date NOT NULL,
+ErkekMi bit NOT NULL)
+
+SELECT * FROM Ogretmen
+ALTER TABLE Ogretmen ADD OgrenciSayisi int 
+ALTER TABLE Ogretmen DROP COLUMN OgrenciSayisi
+ALTER TABLE Ogretmen ADD OgrenciSayisi int DEFAULT 0
+SELECT * FROM Ogretmen
+SELECT Ad, Soyad FROM Ogretmen WHERE ErkekMi = 1
+SELECT Ad, Soyad FROM Ogretmen WHERE OgretmenNo > 200 AND ErkekMi = 1 
+SELECT Ad, Soyad FROM Ogretmen WHERE OgretmenNo in (123,432)
+SELECT Ad, Soyad FROM Ogretmen WHERE OgretmenNo in (123,432) OR ErkekMi = 1
+SELECT Ad, Soyad FROM Ogretmen WHERE TCKimlikNo like '%34%'
+SELECT TCKimlikNo FROM Ogretmen WHERE TCKimlikNo like '%34%'
+SELECT Ad, Soyad, TCKimlikNo FROM Ogretmen WHERE Ad like '%A'
