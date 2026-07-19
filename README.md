@@ -1,3 +1,2 @@
 # SQL-TEMELLER-
-i learned how to use create table, drop table, add and alter table
-i learned how to use select and where
+Code I wrote and notes I took during the SQL Server course I started from scratch.
