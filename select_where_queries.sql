@@ -58,3 +58,7 @@ INSERT INTO Ogrenci (OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, Dog
 		values(980, 'Damla','Sucu','12345678913','2019-08-19', 0, '2003-04-29')
 INSERT INTO Ogrenci (OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, DogumTarihi) 
 		values(980, 'Berra','Sucu','12345678940','2019-01-10', 0, '2003-01-06')
+
+--PERSONEL INSERT INTO WORKS (OGRETMEN TABLE)
+INSERT INTO Ogretmen (OgretmenNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi)
+		VALUES(203, 'Burak','Enes','1234567982','2024-02-09', 0)
