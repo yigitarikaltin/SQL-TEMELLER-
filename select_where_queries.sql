@@ -51,3 +51,10 @@ SELECT Ad, Soyad FROM Ogretmen WHERE OgretmenNo in (123,432) OR ErkekMi = 1
 SELECT Ad, Soyad FROM Ogretmen WHERE TCKimlikNo like '%34%'
 SELECT TCKimlikNo FROM Ogretmen WHERE TCKimlikNo like '%34%'
 SELECT Ad, Soyad, TCKimlikNo FROM Ogretmen WHERE Ad like '%A'
+
+--INSERT INTO KULLANIMI
+INSERT INTO Ogrenci VALUES(925,'Ahmet','Çalık','12345678991','2022-02-15',1,'2006-08-09',70,0,0)
+INSERT INTO Ogrenci (OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, DogumTarihi) 
+		values(980, 'Damla','Sucu','12345678913','2019-08-19', 0, '2003-04-29')
+INSERT INTO Ogrenci (OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, DogumTarihi) 
+		values(980, 'Berra','Sucu','12345678940','2019-01-10', 0, '2003-01-06')
