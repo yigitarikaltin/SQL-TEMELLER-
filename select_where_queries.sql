@@ -63,6 +63,14 @@ INSERT INTO Ogrenci (OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, Dog
 INSERT INTO Ogretmen (OgretmenNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi)
 		VALUES(203, 'Burak','Enes','1234567982','2024-02-09', 0)
 
+--UPDATE OPERATORU
+uPDATE Ogrenci SET SinavNotu1 = 75 WHERE Ad = 'Damla' AND Soyad = 'Sucu'
+UPDATE Ogrenci SET SinavNotu2 = 80 WHERE ErkekMi = 1
+UPDATE Ogrenci SET SinavNotu2 = 85 WHERE OgrenciNo>500;
+UPDATE Ogrenci SET SinavNotu1 = 90, FinalNotu = 100 WHERE OgrenciNo IN (124,392,29,11) AND ErkekMi = 1
+UPDATE Ogrenci SET SinavNotu1 = 05, SinavNotu2 = 40, FinalNotu = 22 WHERE Ad = 'Batuhan' AND Soyad = 'Kaymak'
+UPDATE Ogrenci SET OgrenciNO = 129 WHERE Ad = 'Damla' AND Soyad = 'Sucu' 
+
 --DELETE OPERATORU
 DELETE FROM Ogrenci WHERE Ad = 'Fatma' AND Soyad = 'Talha'
 DELETE FROM Ogrenci WHERE OgrenciNo IN(900,11) AND ErkekMi = 1
