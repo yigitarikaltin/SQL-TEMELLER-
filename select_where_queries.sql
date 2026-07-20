@@ -60,9 +60,11 @@ INSERT INTO Ogrenci (OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, Dog
 		values(980, 'Berra','Sucu','12345678940','2019-01-10', 0, '2003-01-06')
 INSERT INTO Ogrenci VALUES( 102, 'Cengiz','Kardelen','12345678990','2024-09-30', 1, '2002-01-18', 91, 65, 80)
 	
---PERSONEL INSERT INTO WORKS (OGRETMEN TABLE)
+--PERSONEL INSERT INTO AND UPDATE WORKS (OGRETMEN TABLE)
 INSERT INTO Ogretmen (OgretmenNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi)
 		VALUES(203, 'Burak','Enes','1234567982','2024-02-09', 0)
+SELECT * FROM Ogretmen
+UPDATE Ogretmen SET TCKimlikNo = '12345678904' WHERE Soyad = 'Enes'
 
 --UPDATE OPERATORU
 uPDATE Ogrenci SET SinavNotu1 = 75 WHERE Ad = 'Damla' AND Soyad = 'Sucu'
