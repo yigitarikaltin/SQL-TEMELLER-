@@ -78,3 +78,17 @@ UPDATE Ogrenci SET OgrenciNO = 129 WHERE Ad = 'Damla' AND Soyad = 'Sucu'
 DELETE FROM Ogrenci WHERE Ad = 'Fatma' AND Soyad = 'Talha'
 DELETE FROM Ogrenci WHERE OgrenciNo IN(900,11) AND ErkekMi = 1
 DELETE FROM Ogrenci WHERE DogumTarihi > '2006-12-12'
+
+-- ORDER BY (SIRALA), ASC (ARTARAK) / DESC (AZALARAK)  OPERATORU
+SELECT * FROM Ogrenci ORDER BY OgrenciNo
+SELECT * FROM Ogrenci ORDER BY OgrenciNo ASC
+SELECT * FROM Ogrenci ORDER BY OgrenciNo DESC
+SELECT * FROM Ogrenci ORDER BY ErkekMi, Ad 
+SELECT * FROM Ogrenci ORDER BY ErkekMi, Ad DESC
+
+--PERSONEL WORKS
+DELETE FROM Ogrenci WHERE Ad = 'Cengiz'
+SELECT * FROM Ogrenci ORDER BY OgrenciNo DESC
+INSERT INTO Ogrenci(OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, DogumTarihi)
+		VALUES (990, 'Efe','Dursun','12345678917','2023-12-01', 1, '2005-01-05') 
+UPDATE Ogrenci SET SinavNotu1 = 80, SinavNotu2 = 45, FinalNotu = 90 WHERE Ad = 'Efe' AND Soyad = 'Dursun'
