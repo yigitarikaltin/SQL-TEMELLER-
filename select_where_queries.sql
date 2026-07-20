@@ -58,7 +58,8 @@ INSERT INTO Ogrenci (OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, Dog
 		values(980, 'Damla','Sucu','12345678913','2019-08-19', 0, '2003-04-29')
 INSERT INTO Ogrenci (OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, DogumTarihi) 
 		values(980, 'Berra','Sucu','12345678940','2019-01-10', 0, '2003-01-06')
-
+INSERT INTO Ogrenci VALUES( 102, 'Cengiz','Kardelen','12345678990','2024-09-30', 1, '2002-01-18', 91, 65, 80)
+	
 --PERSONEL INSERT INTO WORKS (OGRETMEN TABLE)
 INSERT INTO Ogretmen (OgretmenNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi)
 		VALUES(203, 'Burak','Enes','1234567982','2024-02-09', 0)
@@ -74,4 +75,4 @@ UPDATE Ogrenci SET OgrenciNO = 129 WHERE Ad = 'Damla' AND Soyad = 'Sucu'
 --DELETE OPERATORU
 DELETE FROM Ogrenci WHERE Ad = 'Fatma' AND Soyad = 'Talha'
 DELETE FROM Ogrenci WHERE OgrenciNo IN(900,11) AND ErkekMi = 1
-INSERT INTO Ogrenci VALUES( 102, 'Cengiz','Kardelen','12345678990','2024-09-30', 1, '2002-01-18', 91, 65, 80)
+DELETE FROM Ogrenci WHERE DogumTarihi > '2006-12-12'
