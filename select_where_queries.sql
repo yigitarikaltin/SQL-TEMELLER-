@@ -19,7 +19,7 @@ ALTER TABLE Ogrenci ADD SinavNotu1 tinyint DEFAULT 0
 SELECT * FROM Ogrenci WHERE OgrenciNo > 500 AND ErkekMi = 1
 SELECT * FROM Ogrenci WHERE Soyad = 'Eren' OR Ad = 'Ömer'
 
-IN OPERATORU
+--IN OPERATORU
 SELECT * FROM Ogrenci WHERE OgrenciNo in (124, 11, 893)
 SELECT * FROM Ogrenci WHERE OgrenciNo in (124, 11, 893) AND ErkekMi = 1
 
@@ -62,3 +62,8 @@ INSERT INTO Ogrenci (OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, Dog
 --PERSONEL INSERT INTO WORKS (OGRETMEN TABLE)
 INSERT INTO Ogretmen (OgretmenNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi)
 		VALUES(203, 'Burak','Enes','1234567982','2024-02-09', 0)
+
+--DELETE OPERATORU
+DELETE FROM Ogrenci WHERE Ad = 'Fatma' AND Soyad = 'Talha'
+DELETE FROM Ogrenci WHERE OgrenciNo IN(900,11) AND ErkekMi = 1
+INSERT INTO Ogrenci VALUES( 102, 'Cengiz','Kardelen','12345678990','2024-09-30', 1, '2002-01-18', 91, 65, 80)
