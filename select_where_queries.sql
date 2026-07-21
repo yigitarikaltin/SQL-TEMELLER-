@@ -110,3 +110,23 @@ SELECT * FROM Ogrenci WHERE OgrenciNo >= 300 AND OgrenciNo <= 900
 SELECT * FROM Ogrenci WHERE OgrenciNo BETWEEN 200 AND 900
 SELECT * FROM Ogrenci WHERE OgrenciNo BETWEEN 200 AND 900 AND ErkekMi = 0
 SELECT * FROM Ogrenci WHERE DogumTarihi BETWEEN '2000-01-01' AND '2001-12-12'
+
+--COUNT (KAÇ ADET OLDUGUNU GOSTERIR) KULLANIMI
+SELECT COUNT(*) FROM Ogrenci --Kaç adet sütun oldugunu gosterır
+SELECT COUNT(*) FROM Ogrenci WHERE ErkekMi = 1  --Erkek öğrenci sütun sayısını yani sayısını gosterır
+SELECT COUNT(*) FROM Ogrenci WHERE DogumTarihi >= '2003-03-09'  --Dogum tarihi 2003-03-09 dan buyuk ogrenci sayisi
+
+--SUM KULLANIMI (SUTUNDAKI DEGERLERIN TOPLAMINI GETIRIR) 
+SELECT SUM(FinalNotu) FROM Ogrenci  --Bütün final notlarını toplar ve yazar
+SELECT SUM(SinavNotu2) FROM Ogrenci WHERE OgrenciNo >= 200
+
+--MAX KULLANIMI (SUTUNDAKI EN YUKSEK DEGERI GETIRIR)
+SELECT MAX(SinavNotu1) FROM Ogrenci
+SELECT MAX(SinavNotu1) FROM Ogrenci WHERE ErkekMi = 0
+
+--AVG KOMUTU (SUTUNUN ORTALAMASINI HESAPLAR)
+SELECT AVG(FinalNotu) FROM Ogrenci  
+SELECT AVG(FinalNotu) FROM Ogrenci WHERE KayitTarihi >= '2024-12-12'
+
+SELECT SUM(SinavNotu1) / COUNT(*) FROM Ogrenci
+SELECT AVG(SinavNotu1) FROM Ogrenci   --SAME THINK
