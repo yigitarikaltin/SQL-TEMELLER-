@@ -120,13 +120,40 @@ SELECT COUNT(*) FROM Ogrenci WHERE DogumTarihi >= '2003-03-09'  --Dogum tarihi 2
 SELECT SUM(FinalNotu) FROM Ogrenci  --Bütün final notlarını toplar ve yazar
 SELECT SUM(SinavNotu2) FROM Ogrenci WHERE OgrenciNo >= 200
 
---MAX KULLANIMI (SUTUNDAKI EN YUKSEK DEGERI GETIRIR)
+--MAX/MIN KULLANIMI (SUTUNDAKI EN YUKSEK/DUSUK DEGERI GETIRIR)
 SELECT MAX(SinavNotu1) FROM Ogrenci
+SELECT MIN(SinavNotu1) FROM Ogrenci
 SELECT MAX(SinavNotu1) FROM Ogrenci WHERE ErkekMi = 0
 
---AVG KOMUTU (SUTUNUN ORTALAMASINI HESAPLAR)
+--AVG KULLANIMI (SUTUNUN ORTALAMASINI HESAPLAR)
 SELECT AVG(FinalNotu) FROM Ogrenci  
 SELECT AVG(FinalNotu) FROM Ogrenci WHERE KayitTarihi >= '2024-12-12'
 
 SELECT SUM(SinavNotu1) / COUNT(*) FROM Ogrenci
 SELECT AVG(SinavNotu1) FROM Ogrenci   --SAME THINK
+
+--GROUP BY KULLANIMI (GRUPLAMA YAPAR)          GRUPLANDIRMA YAPACAĞIMIZ SÜTUNU YAZMAK LAZIM BAŞA, Mantığı şu: Select ColumnName, COUNT(*) (sayısını ogrenmek ıcın) AS OlusanColumnName FROM TableName GROUP BY Gruplandirmak İstedigimiz ColumnName
+
+SELECT ErkekMi, COUNT(*) FROM Ogrenci GROUP BY ErkekMi
+SELECT ErkekMi, COUNT(*) AS OgrenciSayisi FROM Ogrenci GROUP BY ErkekMi
+SELECT ErkekMi, SUM(SinavNotu1) / COUNT(*) AS NotOrtalamalari FROM Ogrenci GROUP BY ErkekMi
+SELECT ErkekMi, COUNT(*) AS OgrenciSayisi, AVG(SinavNotu1) AS Ortalama FROM Ogrenci GROUP BY ErkekMi
+
+--PERSONEL WORKS
+SELECT ErkekMi, COUNT(*) AS OgrenciSayisi, SUM(SinavNotu1) / COUNT(*) AS Ortalama FROM Ogrenci GROUP BY ErkekMi
+
+SELECT ErkekMi, COUNT(*) AS OgrenciSayisi, SUM(SinavNotu1) / COUNT(*) AS SinavOrtalamasi1,
+										   SUM(SinavNotu2) / COUNT(*) AS SinavOrtalamasi2,
+										   SUM(FinalNotu) / COUNT(*) AS FinalOrtalamasi,
+										   MIN(SinavNotu1) AS Sinav1EnDusukNot,
+										   MAX(SinavNotu1) AS Sinav1EnYuksekNot,
+ 										   MIN(SinavNotu2) AS Sinav2EnDusukNot,
+										   MAX(SinavNotu2) AS Sinav2EnYuksekNot,
+										   MIN(FinalNotu) AS FinalEnDusukNot, 
+										   MAX(FinalNotu) AS FinalEnYuksekNot FROM Ogrenci GROUP BY ErkekMi
+
+										   
+SELECT ErkekMi, COUNT(*) AS OgrenciSayisi, SUM(SinavNotu1) / COUNT(*) AS SinavOrtalamasi1,
+										   SUM(SinavNotu2) / COUNT(*) AS SinavOrtalamasi2,
+										   SUM(FinalNotu) / COUNT(*) AS FinalOrtalamasi FROM Ogrenci GROUP BY ErkekMi
+
