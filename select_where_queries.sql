@@ -52,7 +52,7 @@ SELECT Ad, Soyad FROM Ogretmen WHERE TCKimlikNo like '%34%'
 SELECT TCKimlikNo FROM Ogretmen WHERE TCKimlikNo like '%34%'
 SELECT Ad, Soyad, TCKimlikNo FROM Ogretmen WHERE Ad like '%A'
 
---INSERT INTO KULLANIMI
+--INSERT INTO KULLANIMI (YENİ KAYIT ATAR)
 INSERT INTO Ogrenci VALUES(925,'Ahmet','Çalık','12345678991','2022-02-15',1,'2006-08-09',70,0,0)
 INSERT INTO Ogrenci (OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, DogumTarihi) 
 		values(980, 'Damla','Sucu','12345678913','2019-08-19', 0, '2003-04-29')
@@ -65,8 +65,8 @@ INSERT INTO Ogretmen (OgretmenNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi)
 		VALUES(203, 'Burak','Enes','1234567982','2024-02-09', 0)
 SELECT * FROM Ogretmen
 UPDATE Ogretmen SET TCKimlikNo = '12345678904' WHERE Soyad = 'Enes'
-
---UPDATE OPERATORU
+ 
+--UPDATE OPERATORU (DEĞERLERİ GÜNCELLER)
 uPDATE Ogrenci SET SinavNotu1 = 75 WHERE Ad = 'Damla' AND Soyad = 'Sucu'
 UPDATE Ogrenci SET SinavNotu2 = 80 WHERE ErkekMi = 1
 UPDATE Ogrenci SET SinavNotu2 = 85 WHERE OgrenciNo>500;
@@ -74,7 +74,7 @@ UPDATE Ogrenci SET SinavNotu1 = 90, FinalNotu = 100 WHERE OgrenciNo IN (124,392,
 UPDATE Ogrenci SET SinavNotu1 = 05, SinavNotu2 = 40, FinalNotu = 22 WHERE Ad = 'Batuhan' AND Soyad = 'Kaymak'
 UPDATE Ogrenci SET OgrenciNO = 129 WHERE Ad = 'Damla' AND Soyad = 'Sucu' 
 
---DELETE OPERATORU
+--DELETE OPERATORU (KAYIT SİLER)
 DELETE FROM Ogrenci WHERE Ad = 'Fatma' AND Soyad = 'Talha'
 DELETE FROM Ogrenci WHERE OgrenciNo IN(900,11) AND ErkekMi = 1
 DELETE FROM Ogrenci WHERE DogumTarihi > '2006-12-12'
@@ -92,3 +92,21 @@ SELECT * FROM Ogrenci ORDER BY OgrenciNo DESC
 INSERT INTO Ogrenci(OgrenciNo, Ad, Soyad, TCKimlikNo, KayitTarihi, ErkekMi, DogumTarihi)
 		VALUES (990, 'Efe','Dursun','12345678917','2023-12-01', 1, '2005-01-05') 
 UPDATE Ogrenci SET SinavNotu1 = 80, SinavNotu2 = 45, FinalNotu = 90 WHERE Ad = 'Efe' AND Soyad = 'Dursun'
+
+--AS KULLANIMI (1. KULLANIMI AD DEĞİŞTİRİR, 2. KULLANIMI MATEMATİKSEL İŞLEM YAPAR.)
+	--1. KULLANIM
+SELECT OgrenciNo, Ad, Soyad, SinavNotu1 AS Midterm1, SinavNotu2 AS Midterm2, FinalNotu FROM Ogrenci
+	--2. KULLANIM
+SELECT OgrenciNo, Ad, Soyad, SinavNotu1, SinavNotu2, FinalNotu,
+		(SinavNotu1+SinavNotu2+FinalNotu)/3 AS Ortalama FROM Ogrenci
+
+-- PERSONEL AS WORKS
+SELECT OgretmenNo, Ad AS İsim, Soyad AS Soyisim, OgrenciSayisi, DersSayisi, MezunSayisi FROM OGRETMEN
+SELECT OgretmenNo, Ad, Soyad, OgrenciSayisi, DersSayisi, MezunSayisi,
+		(OgrenciSayisi+DersSayisi+MezunSayisi)/3 AS OgretmenBasariNotu FROM Ogretmen
+
+--BETWEEN KULLANIMI
+SELECT * FROM Ogrenci WHERE OgrenciNo >= 300 AND OgrenciNo <= 900 
+SELECT * FROM Ogrenci WHERE OgrenciNo BETWEEN 200 AND 900
+SELECT * FROM Ogrenci WHERE OgrenciNo BETWEEN 200 AND 900 AND ErkekMi = 0
+SELECT * FROM Ogrenci WHERE DogumTarihi BETWEEN '2000-01-01' AND '2001-12-12'
