@@ -157,3 +157,9 @@ SELECT ErkekMi, COUNT(*) AS OgrenciSayisi, SUM(SinavNotu1) / COUNT(*) AS SinavOr
 										   SUM(SinavNotu2) / COUNT(*) AS SinavOrtalamasi2,
 										   SUM(FinalNotu) / COUNT(*) AS FinalOrtalamasi FROM Ogrenci GROUP BY ErkekMi
 
+--WHERE İLE İNNER JOİN İSLEMİ YAPMA
+
+SELECT * FROM Ogrenci
+SELECT Ogrenci.OgrenciNo, Ogrenci.Ad, Ogrenci.Soyad, Ogrenci.KayitTarihi,
+	   OgrenciBilgileri.AdresDetay, OgrenciBilgileri.Sehir FROM Ogrenci,OgrenciBilgileri
+
