@@ -162,4 +162,5 @@ SELECT ErkekMi, COUNT(*) AS OgrenciSayisi, SUM(SinavNotu1) / COUNT(*) AS SinavOr
 SELECT * FROM Ogrenci
 SELECT Ogrenci.OgrenciNo, Ogrenci.Ad, Ogrenci.Soyad, Ogrenci.KayitTarihi,
 	   OgrenciBilgileri.AdresDetay, OgrenciBilgileri.Sehir FROM Ogrenci,OgrenciBilgileri
+       WHERE Ogrenci.OgrenciNo = OgrenciBilgileri.OgrenciNo
 
